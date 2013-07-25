@@ -10,7 +10,7 @@ class data_module {
   }
   
   function connect() {
-  require("config.php");
+    require("config.php");
    
     $this -> connection = mysql_connect($host, $user, $password)
       or die("Error connecting to server: " . mysql_error());
