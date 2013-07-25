@@ -1,7 +1,7 @@
 <?php
 
-class page {	
-	
+class page {  
+  
   // Generates the html for a page's header:
   function display_normal_page_header($page_details) {
 ?>
@@ -28,9 +28,9 @@ class page {
 </html>
 <?php  
   }
-	
+  
   // Generates the top of the control panel on the screen.
-  function display_control_panel_header() { 	
+  function display_control_panel_header() {   
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -66,10 +66,10 @@ class page {
   }
 
   function display_control_panel_main_page() {
-  	$this -> display_control_panel_header();
+    $this -> display_control_panel_header();
     echo "        <h1>Control Panel</h1>\n";
-  	echo "        Welcome to the Control Panel. Please select an option from the menu above.\n";
-  	$this -> display_control_panel_footer();
+    echo "        Welcome to the Control Panel. Please select an option from the menu above.\n";
+    $this -> display_control_panel_footer();
   }
   
   // Generates the bottom of the control panel on the screen.
@@ -88,32 +88,32 @@ class page {
   // Prints out the messages stored in the $messages array on the screen:
   function display_messages($messages) {
     if (count($messages) > 0) {
-  	  echo "        <p>\n";
-  	  foreach ($messages as $message) {
-  	  	echo "          " . $message . "<br />\n";
-  	  }
-  	  echo "        </p>\n";
+      echo "        <p>\n";
+      foreach ($messages as $message) {
+        echo "          " . $message . "<br />\n";
+      }
+      echo "        </p>\n";
     }
   }
   
   // Display the Log In page.
   function display_log_in_page($messages, $display_form, $user_name) {
-  	$this -> display_control_panel_header();
-  	echo "        <h1>Log In</h1>\n";
-  	// Prints out the messages stored in $messages on the screen:
+    $this -> display_control_panel_header();
+    echo "        <h1>Log In</h1>\n";
+    // Prints out the messages stored in $messages on the screen:
     $this -> display_messages($messages);
-  	// If $display_form is true, display the form:
-  	if ($display_form == true) {
-  	  // Creates a new form for logging in:
-  	  $log_in_form = new form();
-  	  $log_in_form -> display_log_in_form($user_name);
-  	}
-  	$this -> display_control_panel_footer();
+    // If $display_form is true, display the form:
+    if ($display_form == true) {
+      // Creates a new form for logging in:
+      $log_in_form = new form();
+      $log_in_form -> display_log_in_form($user_name);
+    }
+    $this -> display_control_panel_footer();
   }
   
   // Display the Log Out page.
   function display_log_out_page($messages) {
-  	$this -> display_control_panel_header();
+    $this -> display_control_panel_header();
     echo "        <h1>Log Out</h1>\n";
     $this -> display_messages($messages);
     $this -> display_control_panel_footer();
@@ -121,36 +121,36 @@ class page {
 
   // Displays the Register User page.
   function display_register_user_page($messages, $display_form, $user_details) {
-  	$this -> display_control_panel_header();
-  	echo "        <h1>Register User</h1>\n";
-  	// Prints out the messages stored in $messages on the screen:
+    $this -> display_control_panel_header();
+    echo "        <h1>Register User</h1>\n";
+    // Prints out the messages stored in $messages on the screen:
     $this -> display_messages($messages);
-	  // If $display_form is true, display the form:
-  	if ($display_form == true) {
-  	  // Creates a new form for logging in:
-  	  $register_user_form = new form();
-  	  $register_user_form -> display_register_user_form($user_details);
-  	}
-  	$this -> display_control_panel_footer();
+    // If $display_form is true, display the form:
+    if ($display_form == true) {
+      // Creates a new form for logging in:
+      $register_user_form = new form();
+      $register_user_form -> display_register_user_form($user_details);
+    }
+    $this -> display_control_panel_footer();
   }
   
   // Displays the View User Profile page.
   function display_view_user_profile_page($messages, $display_profile, $user_details) {
-  	$this -> display_control_panel_header();
-  	echo "        <h1>View User Profile</h1>\n";
-  	$this -> display_messages($messages);
-  	if ($display_profile == true) {
+    $this -> display_control_panel_header();
+    echo "        <h1>View User Profile</h1>\n";
+    $this -> display_messages($messages);
+    if ($display_profile == true) {
 ?>
         <table>
           <tr>
             <td>User Name:</td>
             <td><?php echo $user_details["user_name"] ?></td>
           </tr>
-  	      <tr>
-  	        <td>Email Address:</td>
-  	        <td><?php echo $user_details["email_address"] ?></td>
-  	      </tr>
-  	      <tr>
+          <tr>
+            <td>Email Address:</td>
+            <td><?php echo $user_details["email_address"] ?></td>
+          </tr>
+          <tr>
             <td>Age:</td>
             <td><?php echo $user_details["age"] ?></td>
           </tr>
@@ -176,22 +176,22 @@ class page {
           </tr>
         </table>
 <?php
-  	}
-  	$this -> display_control_panel_footer();
+    }
+    $this -> display_control_panel_footer();
   }
   
   function display_edit_user_profile_page($messages, $display_form, $user_details) {
-  	$this -> display_control_panel_header();
-  	echo "        <h1>Edit User Profile</h1>\n";
-	// Prints out the messages stored in $messages on the screen:
-  	$this -> display_messages($messages);
-	// If $display_form is true, display the form:
-  	if ($display_form == true) {
-  	  // Creates a new form for logging in:
-  	  $edit_user_profile_form = new form();
-  	  $edit_user_profile_form -> display_edit_user_profile_form($user_details);
-  	}
-  	$this -> display_control_panel_footer();
+    $this -> display_control_panel_header();
+    echo "        <h1>Edit User Profile</h1>\n";
+  // Prints out the messages stored in $messages on the screen:
+    $this -> display_messages($messages);
+  // If $display_form is true, display the form:
+    if ($display_form == true) {
+      // Creates a new form for logging in:
+      $edit_user_profile_form = new form();
+      $edit_user_profile_form -> display_edit_user_profile_form($user_details);
+    }
+    $this -> display_control_panel_footer();
   }
   
   function display_delete_user_page($messages, $display_form, $user_name) {
@@ -211,7 +211,7 @@ class page {
     $this -> display_control_panel_header();
     echo "        <h1>Add Page</h1>\n";
     // Prints out the messages stored in $messages on the screen:
-  	$this -> display_messages($messages);
+    $this -> display_messages($messages);
     // If $display_form is true, display the form:
     if ($display_form == true) {
       $add_page_form = new form();
@@ -222,28 +222,28 @@ class page {
   
   function display_edit_page_page($messages, $display_form, $page_details) {
     $this -> display_control_panel_header();
-	  echo "        <h1>Edit Page</h1>\n";
-	  // Prints out the messages stored in $messages on the screen:
-  	$this -> display_messages($messages);
-	  // If $display_form is true, display the form:
-	  if ($display_form == true) {
-	    $edit_page_form = new form();
-	    $edit_page_form -> display_edit_page_form($page_details);
-  	}
-	  $this -> display_control_panel_footer();
+    echo "        <h1>Edit Page</h1>\n";
+    // Prints out the messages stored in $messages on the screen:
+    $this -> display_messages($messages);
+    // If $display_form is true, display the form:
+    if ($display_form == true) {
+      $edit_page_form = new form();
+      $edit_page_form -> display_edit_page_form($page_details);
+    }
+    $this -> display_control_panel_footer();
   }
    
   function display_delete_page_page($messages, $display_form, $partial_url) {
     $this -> display_control_panel_header();
-	  echo "        <h1>Delete Page</h1>\n";
-	  // Prints out the messages stored in $messages on the screen:
-  	$this -> display_messages($messages);
-	  // If $display_form is true, display the form:
-	  if ($display_form == true) {
-	    $delete_page_form = new form();
-	    $delete_page_form -> display_delete_page_form($partial_url);
+    echo "        <h1>Delete Page</h1>\n";
+    // Prints out the messages stored in $messages on the screen:
+    $this -> display_messages($messages);
+    // If $display_form is true, display the form:
+    if ($display_form == true) {
+      $delete_page_form = new form();
+      $delete_page_form -> display_delete_page_form($partial_url);
     }
-	  $this -> display_control_panel_footer();
+    $this -> display_control_panel_footer();
   }
 
   function display_normal_page($page_details) {
@@ -262,7 +262,7 @@ class page {
     $formatted_body = str_replace("[i]", "<em>", $formatted_body);
     $formatted_body = str_replace("[/i]", "</em>", $formatted_body);
     $formatted_body = $this -> replace_url($formatted_body);
-	  
+    
     echo "    <p>" . $formatted_body . "</p>\n";
       $this -> display_normal_page_footer();
   }
@@ -292,7 +292,7 @@ class page {
     echo "    <p>The page that you selected could not be found.</p>\n";
     $this -> display_normal_page_footer();
   }
-	
+  
 }
 
 ?>

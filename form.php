@@ -75,7 +75,7 @@ class form {
   function display_edit_user_profile_form($user_details) {
 ?>
         <form id="edit_user_profile_form" action="?page=control_panel/edit_user_profile/<?php echo $user_details["user_name"]; ?>" method="post">
-		  <input type="hidden" name="user_name" value="<?php echo $user_details["user_name"]; ?>" />
+      <input type="hidden" name="user_name" value="<?php echo $user_details["user_name"]; ?>" />
           <table>
             <tr>
               <td class="field_label"><label for="password" title="Password">Password:</label></td>
@@ -157,10 +157,10 @@ class form {
               <td class="field_input"><input type="text" name="partial_url" value="<?php echo $page_details["partial_url"]; ?>" />*</td>
             </tr>
             <tr>
-	          <td class="field_label"><label for="body" title="Body">Body:</label></td>
-	          <td class="field_input">
+            <td class="field_label"><label for="body" title="Body">Body:</label></td>
+            <td class="field_input">
                 <p><em>BBCode:</em><br />
-	              [subheading]Sub Heading[/subheading]<br />
+                [subheading]Sub Heading[/subheading]<br />
                   [b]Bold Text[/b]<br />
                   [i]Italicised Text[/i]<br />
                   [url=http://www.example.com]Hyperlink[/url]
@@ -176,7 +176,7 @@ class form {
             </tr>
           </table>
         </form>
-<?php  	
+<?php   
   }
   
   function display_edit_page_form($page_details) {
@@ -198,8 +198,8 @@ class form {
               </tr>
               <tr>
                 <td class="field_label"><label for="body" title="Body">Body:</label></td>
-	            <td class="field_input"><textarea name="body" cols="40" rows="10"><?php echo $page_details["body"]; ?></textarea>*</td>
-              </tr>	
+              <td class="field_input"><textarea name="body" cols="40" rows="10"><?php echo $page_details["body"]; ?></textarea>*</td>
+              </tr> 
               <tr>
                 <td class="field_label"></td>
                 <td class="field_input">
