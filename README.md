@@ -1,3 +1,1 @@
-## Content Management Area
-
-A simple content management system written in PHP.
+Copyright © 2005 Chris Alley. Source code and other assets in this repository are provided for demonstration purposes only.
