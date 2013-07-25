@@ -1,0 +1,88 @@
+body {
+  background-color: #888888;
+}
+
+#overall {
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+#header {
+  margin-top: 5px;
+  background-color: #BBBBBB;
+  background-image: url("../images/control_panel_logo.png");
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+#navigation {
+  margin-top: 5px;
+  background-color: #BBBBBB;
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: 8pt;
+}
+
+#main {
+  margin-top: 5px;
+  background-color: #BBBBBB;
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: 12pt;
+}
+
+#footer {
+  margin-top: 5px;
+  background-color: #BBBBBB;
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: 8pt;
+}
+
+a {
+  color: #5F512F;
+  text-decoration: none;
+}
+
+a:active {
+  color: #5F512F;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #5F512F;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5A5A5A;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 20pt;
+  margin-top: 4px;
+  padding-top: 0;
+  margin-bottom: 10px;
+}
+
+table {
+  font-size: 10pt;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td.field_label {
+  text-align: right;
+  vertical-align: top;
+  padding: 3px;
+}
+
+td.field_input {
+  text-align: left;
+  vertical-align: top;
+  padding: 3px;
+}
