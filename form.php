@@ -17,14 +17,14 @@ class form {
             <tr>
               <td class="field_label"></td>
               <td class="field_input">
-                <input type="submit" name="log_in" value="Log In" /> 
+                <input type="submit" name="log_in" value="Log In" />
               </td>
             </tr>
           </table>
         </form>
-<?php  
+<?php
   } // End of display_log_in_form()
-  
+
   function display_register_user_form($user_details) {
 ?>
         <form id="register_user_form" action="?page=control_panel/register_user" method="post">
@@ -71,11 +71,11 @@ class form {
         </form>
 <?php
   } // End of display_register_user_form()
-  
+
   function display_edit_user_profile_form($user_details) {
 ?>
         <form id="edit_user_profile_form" action="?page=control_panel/edit_user_profile/<?php echo $user_details["user_name"]; ?>" method="post">
-      <input type="hidden" name="user_name" value="<?php echo $user_details["user_name"]; ?>" />
+          <input type="hidden" name="user_name" value="<?php echo $user_details["user_name"]; ?>" />
           <table>
             <tr>
               <td class="field_label"><label for="password" title="Password">Password:</label></td>
@@ -115,14 +115,14 @@ class form {
         </form>
 <?php
   } // End of display_edit_user_profile_form()
-  
+
   function display_delete_user_form($user_name) {
 ?>
         <form id="delete_user_form" action="?page=control_panel/delete_user/<?php echo $user_name; ?>" method="post">
           <table>
             <tr>
               <td>
-              Yes <input type="radio" name="can_delete_user" value="yes"  /> 
+              Yes <input type="radio" name="can_delete_user" value="yes"  />
               No <input type="radio" name="can_delete_user" value="no" checked="checked" />
               </td>
             </tr>
@@ -135,7 +135,7 @@ class form {
         </form>
 <?php
   } // End of display_delete_user_form()
-  
+
   function display_add_page_form($page_details) {
 ?>
         <form id="add_page_form" action="?page=control_panel/add_page" method="post">
@@ -157,8 +157,8 @@ class form {
               <td class="field_input"><input type="text" name="partial_url" value="<?php echo $page_details["partial_url"]; ?>" />*</td>
             </tr>
             <tr>
-            <td class="field_label"><label for="body" title="Body">Body:</label></td>
-            <td class="field_input">
+              <td class="field_label"><label for="body" title="Body">Body:</label></td>
+              <td class="field_input">
                 <p><em>BBCode:</em><br />
                 [subheading]Sub Heading[/subheading]<br />
                   [b]Bold Text[/b]<br />
@@ -171,14 +171,14 @@ class form {
             <tr>
               <td class="field_label"></td>
               <td class="field_input">
-                <input type="submit" name="add_page" value="Add Page" /> 
+                <input type="submit" name="add_page" value="Add Page" />
               </td>
             </tr>
           </table>
         </form>
-<?php   
+<?php
   }
-  
+
   function display_edit_page_form($page_details) {
 ?>
         <form id="add_page_form" action="?page=control_panel/edit_page/<?php echo $page_details["partial_url"]; ?>" method="post">
@@ -199,25 +199,25 @@ class form {
               <tr>
                 <td class="field_label"><label for="body" title="Body">Body:</label></td>
               <td class="field_input"><textarea name="body" cols="40" rows="10"><?php echo $page_details["body"]; ?></textarea>*</td>
-              </tr> 
+              </tr>
               <tr>
                 <td class="field_label"></td>
                 <td class="field_input">
-                  <input type="submit" name="edit_page" value="Edit Page" /> 
+                  <input type="submit" name="edit_page" value="Edit Page" />
                 </td>
               </tr>
             </table>
           </form>
-<?php  
+<?php
   } // End of display_edit_page_form() method.
-  
+
   function display_delete_page_form($partial_url) {
 ?>
         <form id="delete_user_form" action="?page=control_panel/delete_page/<?php echo $partial_url; ?>" method="post">
           <table>
             <tr>
               <td>
-              Yes <input type="radio" name="can_delete_page" value="yes"  /> 
+              Yes <input type="radio" name="can_delete_page" value="yes"  />
               No <input type="radio" name="can_delete_page" value="no" checked="checked" />
               </td>
             </tr>
@@ -230,6 +230,6 @@ class form {
         </form>
 <?php
   } // End of display_delete_page_form()  method.
-  
+
 }
 ?>

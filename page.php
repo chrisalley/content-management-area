@@ -1,7 +1,7 @@
 <?php
 
-class page {  
-  
+class page {
+
   // Generates the html for a page's header:
   function display_normal_page_header($page_details) {
 ?>
@@ -20,17 +20,17 @@ class page {
   <body>
 <?php
   }
-  
+
   // Generates the html for a page's footer:
   function display_normal_page_footer() {
 ?>
   </body>
 </html>
-<?php  
+<?php
   }
-  
+
   // Generates the top of the control panel on the screen.
-  function display_control_panel_header() {   
+  function display_control_panel_header() {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -49,13 +49,13 @@ class page {
 <?php
   if ($_SESSION["user_name"] == true) {
 ?>
-        <a href="?page=control_panel/log_out" title="Log Out">Log Out</a> | 
-        <a href="?page=control_panel/list_pages" title="List Pages">List Pages</a> | 
-        <a href="?page=control_panel/list_users" title="List Users">List Users</a> | 
-        <a href="?page=control_panel/register_user" title="Register User">Register User</a> | 
+        <a href="?page=control_panel/log_out" title="Log Out">Log Out</a> |
+        <a href="?page=control_panel/list_pages" title="List Pages">List Pages</a> |
+        <a href="?page=control_panel/list_users" title="List Users">List Users</a> |
+        <a href="?page=control_panel/register_user" title="Register User">Register User</a> |
         <a href="?page=control_panel/add_page" title="Add Page">Add Page</a>
 <?php
-  } 
+  }
   else {
     echo "<a href=\"?page=control_panel/log_in\" title=\"Log In\">Log In</a>";
   }
@@ -71,7 +71,7 @@ class page {
     echo "        Welcome to the Control Panel. Please select an option from the menu above.\n";
     $this -> display_control_panel_footer();
   }
-  
+
   // Generates the bottom of the control panel on the screen.
   function display_control_panel_footer() {
 ?>
@@ -84,7 +84,7 @@ class page {
 </html>
 <?php
   }
- 
+
   // Prints out the messages stored in the $messages array on the screen:
   function display_messages($messages) {
     if (count($messages) > 0) {
@@ -95,7 +95,7 @@ class page {
       echo "        </p>\n";
     }
   }
-  
+
   // Display the Log In page.
   function display_log_in_page($messages, $display_form, $user_name) {
     $this -> display_control_panel_header();
@@ -110,7 +110,7 @@ class page {
     }
     $this -> display_control_panel_footer();
   }
-  
+
   // Display the Log Out page.
   function display_log_out_page($messages) {
     $this -> display_control_panel_header();
@@ -133,7 +133,7 @@ class page {
     }
     $this -> display_control_panel_footer();
   }
-  
+
   // Displays the View User Profile page.
   function display_view_user_profile_page($messages, $display_profile, $user_details) {
     $this -> display_control_panel_header();
@@ -179,13 +179,13 @@ class page {
     }
     $this -> display_control_panel_footer();
   }
-  
+
   function display_edit_user_profile_page($messages, $display_form, $user_details) {
     $this -> display_control_panel_header();
     echo "        <h1>Edit User Profile</h1>\n";
-  // Prints out the messages stored in $messages on the screen:
+    // Prints out the messages stored in $messages on the screen:
     $this -> display_messages($messages);
-  // If $display_form is true, display the form:
+    // If $display_form is true, display the form:
     if ($display_form == true) {
       // Creates a new form for logging in:
       $edit_user_profile_form = new form();
@@ -193,7 +193,7 @@ class page {
     }
     $this -> display_control_panel_footer();
   }
-  
+
   function display_delete_user_page($messages, $display_form, $user_name) {
     $this -> display_control_panel_header();
     echo "        <h1>Delete User</h1>\n";
@@ -206,7 +206,7 @@ class page {
     }
     $this -> display_control_panel_footer();
   }
-  
+
   function display_add_page_page($messages, $display_form, $page_details) {
     $this -> display_control_panel_header();
     echo "        <h1>Add Page</h1>\n";
@@ -219,7 +219,7 @@ class page {
     }
     $this -> display_control_panel_footer();
   }
-  
+
   function display_edit_page_page($messages, $display_form, $page_details) {
     $this -> display_control_panel_header();
     echo "        <h1>Edit Page</h1>\n";
@@ -232,7 +232,7 @@ class page {
     }
     $this -> display_control_panel_footer();
   }
-   
+
   function display_delete_page_page($messages, $display_form, $partial_url) {
     $this -> display_control_panel_header();
     echo "        <h1>Delete Page</h1>\n";
@@ -249,11 +249,11 @@ class page {
   function display_normal_page($page_details) {
     $this -> display_normal_page_header($page_details);
     echo "    <h1>" . $page_details["title"] . "</h1>\n";
-    
+
     // Format the body with <p> and <br /> tags, with indentation:
     $formatted_body = str_replace("\r\n", "<br />\n    ", $page_details["body"]);
     $formatted_body = str_replace("<br />\n    <br />\n    ", "</p>\n    <p>", $formatted_body);
-    
+
     // Convert bbcode tags to html:
     $formatted_body = str_replace("[subheading]", "<h2>", $formatted_body);
     $formatted_body = str_replace("[/subheading]", "</h2>", $formatted_body);
@@ -262,7 +262,7 @@ class page {
     $formatted_body = str_replace("[i]", "<em>", $formatted_body);
     $formatted_body = str_replace("[/i]", "</em>", $formatted_body);
     $formatted_body = $this -> replace_url($formatted_body);
-    
+
     echo "    <p>" . $formatted_body . "</p>\n";
       $this -> display_normal_page_footer();
   }
@@ -285,14 +285,14 @@ class page {
     }
     return $formatted_body;
   }
-  
+
   function display_error_page($page_details) {
     $this -> display_normal_page_header($page_details);
     echo "    <h1>Page not found.</h1>\n";
     echo "    <p>The page that you selected could not be found.</p>\n";
     $this -> display_normal_page_footer();
   }
-  
+
 }
 
 ?>
